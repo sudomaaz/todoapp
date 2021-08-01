@@ -9,7 +9,6 @@ module.exports = {
       database: process.env.DB_NAME,
       user: process.env.DB_USER,
       password: process.env.DB_PWD,
-      host: process.env.DB_HOST,
     },
     pool: {
       min: 2,
@@ -23,7 +22,7 @@ module.exports = {
       directory: "db/seeds",
     },
   },
-  development: {
+  production: {
     client: "postgresql",
     connection: process.env.DATABASE_URL,
     pool: {
