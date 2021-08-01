@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run migrate&& node app",
     "server": "nodemon app",
-    "migrate": "npx knex migrate:rollback&& npx knex migrate:latest&& npx knex seed:run"
+    "migrate": "npm knex migrate:rollback&& npm knex migrate:latest&& npm knex seed:run"
   },
   "author": "Maaz",
   "license": "MIT",
