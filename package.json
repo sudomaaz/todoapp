@@ -1,0 +1,24 @@
+{
+  "name": "todoapp",
+  "version": "1.0.0",
+  "description": "a simple todo app in hapi js",
+  "main": "app.js",
+  "scripts": {
+    "start": "yarn run migrate&& node app",
+    "server": "nodemon app",
+    "migrate": "npx knex migrate:rollback&& npx knex migrate:latest&& npx knex seed:run"
+  },
+  "author": "Maaz",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/hapi": "20.0.0",
+    "@hapi/inert": "^6.0.3",
+    "@hapi/joi": "^17.1.1",
+    "@hapi/vision": "^6.1.0",
+    "dotenv": "^10.0.0",
+    "hapi-swagger": "^14.2.4",
+    "knex": "^0.95.9",
+    "objection": "^2.2.15",
+    "pg": "^8.7.1"
+  }
+}
