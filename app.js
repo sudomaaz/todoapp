@@ -14,7 +14,7 @@ dotenv.config({ path: "config/.env" });
 setupDB();
 
 const server = Hapi.server({
-  port: 3000,
+  port: process.env.PORT,
   host: "localhost",
 });
 
