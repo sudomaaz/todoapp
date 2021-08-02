@@ -5,7 +5,7 @@ exports.seed = function (knex) {
     .then(function () {
       // Inserts seed entries
       return knex("todo").insert([
-        { name: "hapi", description: "read hapi documentation" },
+        { name: "hapi.js", description: "read hapi documentation" },
       ]);
     });
 };

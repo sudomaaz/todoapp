@@ -11,8 +11,6 @@ const setupDB = require("./db/db");
 
 dotenv.config({ path: "config/.env" });
 
-await setupDB();
-
 const server = Hapi.server({
   port: process.env.PORT,
   host: "localhost",
@@ -26,6 +24,8 @@ const swaggerOptions = {
 };
 
 async function init() {
+  await setupDB();
+
   await server.register([
     Inert,
     Vision,
