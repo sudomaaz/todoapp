@@ -56,12 +56,10 @@ module.exports = [
       tags: ["api"], // ADD THIS TAG
       validate: {
         payload: Joi.object({
-          name: Joi.string()
-            .required()
-            .description("the name for the todo item"),
-          description: Joi.string()
-            .required()
-            .description("the description for the todo item"),
+          name: Joi.string().description("the name for the todo item"),
+          description: Joi.string().description(
+            "the description for the todo item"
+          ),
         }),
         params: Joi.object({
           id: Joi.number().required().description("the id for the todo item"),
