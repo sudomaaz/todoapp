@@ -17,7 +17,7 @@ function setupDB() {
       Model.knex(knex);
       resolve();
     } catch (err) {
-      // console.log(err);
+      console.log(err);
       reject();
     }
   });
