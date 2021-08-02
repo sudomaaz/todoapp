@@ -4,7 +4,7 @@
   "description": "a simple todo app in hapi js",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "npm migrate&& node app",
     "server": "nodemon app",
     "migrate": "npx knex migrate:rollback&& npx knex migrate:latest&& npx knex seed:run"
   },
