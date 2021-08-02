@@ -1,5 +1,5 @@
 exports.up = function (knex) {
-  console.log(process.env.DB_NAME);
+  //console.log(process.env.DB_NAME);
   return knex.schema.createTable("todo", (table) => {
     table.increments();
     table.string("name").notNullable();
