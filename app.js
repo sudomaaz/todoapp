@@ -13,7 +13,6 @@ dotenv.config({ path: "config/.env" });
 
 const server = Hapi.server({
   port: process.env.PORT,
-  host: "localhost",
 });
 
 const swaggerOptions = {
