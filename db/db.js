@@ -9,11 +9,22 @@ function setupDB() {
   //console.log(env);
   const knex = Knex(knexfile[env]);
 
-  await knex.migrate.rollback(knexfile[env]);
-  await knex.migrate.latest(knexfile[env]);
-  await knex.seed.run(knexfile[env]);
+  const promise = new Promise(async (resolve, reject) => {
+    try {
+      await knex.migrate.rollback(knexfile[env]);
+      await knex.migrate.latest(knexfile[env]);
+      await knex.seed.run(knexfile[env]);
+      Model.knex(knex);
+      resolve();
+    } catch (err) {
+      console.log(err);
+      reject();
+    }
+  });
+
+  return promise;
+
   // Give the knex instance to objection.
-  Model.knex(knex);
 }
 
 module.exports = setupDB;

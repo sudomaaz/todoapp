@@ -11,7 +11,7 @@ const setupDB = require("./db/db");
 
 dotenv.config({ path: "config/.env" });
 
-setupDB();
+await setupDB();
 
 const server = Hapi.server({
   port: process.env.PORT,
